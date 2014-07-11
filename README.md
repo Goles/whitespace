@@ -1,8 +1,16 @@
 Whitespace
 ==========
-Whitespace is a minimal and responsive theme for [Octopress](http://octopress.org). This theme let your contents take the center stage of your blog.
+Whitespace is a minimal and responsive theme for [Octopress](http://octopress.org). This theme lets your contents take the center stage of your blog.
 
-Check out the theme in action [here](http://lucaslew.com).
+
+Demos
+-----
+
+Unmodified: [Lucas Lew's blog](http://lucaslew.com).
+
+Slightly customized: [Chymeric Tutorials](http://chymeric.eu), [Yous' Blog](http://yous.be/)
+
+*If you are using whitespace and would like to showcase your website, we would be very happy to add you to the list! Just tell us your URL via the issue tracking system!*
 
 
 Install
@@ -13,27 +21,46 @@ Install
     $ rake generate
 
 
-HTML Elements Changes
----------------------
-Changes that apply to blog content(article)
+Update
+------
+    $ cd octopress/.themes/whitespace
+    $ git pull
+    $ rake install['whitespace']
+    $ rake generate
 
-	h3 - presented in italic
-	a, a:visited - blue color as default
-	ul, ol - left margin of 2em
 
-If you spot any error, feel free to send me suggestions to improve. Thanks!
+Update and Keep Customizations
+------------------------------
+*For this to work, you have to track your website theme customizations on a remote (we call it ```mywebsiterepo```).*
+
+    $ cd octopress/.themes/whitespace
+    $ git pull
+    $ rake install['whitespace']
+    $ cd ../..
+    $ git fetch --all
+    $ git reset --hard mywebsiterepo/master
+    $ rake generate
 
 
 Comment System
 --------------
-Added support for open-source [Juvia](https://github.com/phusion/juvia) comment system. It requires two extra parameters in _config.yml: `juvia_site_key` and `juvia_host`.
+Added support for open-source [Juvia](https://github.com/phusion/juvia) comment system. It requires two extra parameters in `_config.yml`: `juvia_site_key` and `juvia_host`.
+
+
+Navigation Bar
+--------------
+You can add several icons to the navigation bar. Just set some parameters in `_config.yml`:
+
+- `googleplus_user` with `googleplus_hidden: false` for Google+ profile.
+- `pinboard_user` for Pinboard bookmarks.
+- `delicious_user` for Delicious bookmarks.
+- `github_user` with `github_show_profile_link: true` for GitHub profile.
+- `bitbucket_user` for Bitbucket profile.
 
 
 License
 -------
 (The MIT License)
-
-Copyright © 2013 Lucas Lew
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ‘Software’), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
